@@ -30,7 +30,7 @@ z0 = np.zeros(len(df))
 z1 = np.zeros(len(df))
 z2 = np.zeros(len(df))
 
-for i in range(L+1):
+for i in range(lag+1):
     x = df[f"r{i}"]
     z0 += x
     z1 += i*x
@@ -51,7 +51,7 @@ a0 = model.params["z0"]
 a1 = model.params["z1"]
 a2 = model.params["z2"]
 
-lags = np.arange(L+1)
+lags = np.arange(lag+1)
 
 beta = a0 + a1*lags + a2*(lags**2)
 
